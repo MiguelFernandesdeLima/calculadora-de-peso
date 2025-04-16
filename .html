@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMCo</title>
+    <link rel="stylesheet" href=".css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Calculadora de IMC</h1>
+                <p class="subtitle">Descubra seu Índice de Massa Corporal</p>
+            </div>
+
+            <div class="card-body">
+                <div class="input-group">
+                    <label for="weight">Peso (kg)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="weight" placeholder="Ex: 70" min="30" max="300">
+                        <span class="input-icon"><i class="fas fa-weight"></i></span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="height">Altura (cm)</label>
+                    <div class="input-wrapper">
+                        <input type="number"  aria-label="Peso em quilogramas" id="height" placeholder="Ex: 175" min="100" max="250">
+                        <span class="input-icon"><i class="fas fa-ruler-vertical"></i></span>
+                    </div>
+                </div>
+
+                <button aria-label="Calcular IMC" id="calculate-btn" class="btn calculate-btn">
+                    <i class="fas fa-calculator"></i> Calcular IMC
+                </button>
+
+                <div class="result-container hidden" id="result-container">
+                    <div class="result-card">
+                        <div class="result-value">
+                            <span id="imc-value">--</span>
+                            <span class="result-label">IMC</span>
+                        </div>
+                        <div class="result-classification">
+                            <p id="classification-text">Classificação</p>
+                            <p id="classification-range">Faixa de peso ideal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="info-table">
+                    <h3>Classificação IMC</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>IMC</th>
+                                <th>Classificação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-range="underweight">
+                                <td>Abaixo de 18,5</td>
+                                <td>Magreza</td>
+                            </tr>
+                            <tr data-range="normal">
+                                <td>18,5 - 24,9</td>
+                                <td>Normal</td>
+                            </tr>
+                            <tr data-range="overweight">
+                                <td>25 - 29,9</td>
+                                <td>Sobrepeso</td>
+                            </tr>
+                            <tr data-range="obesity1">
+                                <td>30 - 34,9</td>
+                                <td>Obesidade Grau I</td>
+                            </tr>
+                            <tr data-range="obesity2">
+                                <td>35 - 39,9</td>
+                                <td>Obesidade Grau II</td>
+                            </tr>
+                            <tr data-range="obesity3">
+                                <td>Acima de 40</td>
+                                <td>Obesidade Grau III</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src=".js"></script>
+</body>
+</html>
